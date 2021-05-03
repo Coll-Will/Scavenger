@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textInstuct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/enter_ingredients_below"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="78dp"
+        android:background="@color/light_grey"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/profileBtn"
+            android:layout_width="130dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="60dp"
+            android:layout_weight="1"
+            android:background="@color/cardview_shadow_end_color"
+            android:contentDescription="@string/account"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/account" />
+
+        <ImageButton
+            android:id="@+id/favoritesBtn"
+            android:layout_width="138dp"
+            android:layout_height="53dp"
+            android:layout_weight="1"
+            android:background="@color/cardview_shadow_end_color"
+            android:contentDescription="@string/savedmealsbutton"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/saved" />
+
+        <ImageButton
+            android:id="@+id/settingsBtn"
+            android:layout_width="125dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="56dp"
+            android:layout_weight="1"
+            android:background="@color/cardview_shadow_end_color"
+            android:contentDescription="@string/settings"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/settings" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editIngredients"
+        android:layout_width="198dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="64dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInstuct" />
+
+    <TextView
+        android:id="@+id/textEnteredIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/entered_ingredients"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/editIngredients"
+        app:layout_constraintTop_toBottomOf="@+id/editIngredients" />
+
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="wrap_content"
+        android:layout_height="201dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="@+id/textEnteredIngredients"
+        app:layout_constraintTop_toBottomOf="@+id/textEnteredIngredients">
+
+        <LinearLayout
+            android:id="@+id/ingredientLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnSearch"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#2B2B2B"
+        android:text="@string/search"
+        android:textSize="18sp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintStart_toStartOf="@+id/scrollView4"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView4" />
+
+    <ImageButton
+        android:id="@+id/imgbtnAdd"
+        android:layout_width="47dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
+        android:background="@color/cardview_shadow_end_color"
+        android:contentDescription="@string/todo"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/editIngredients"
+        app:layout_constraintStart_toEndOf="@+id/editIngredients"
+        app:srcCompat="@drawable/plus" />
+
+    <TextView
+        android:id="@+id/textErrorMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editIngredients"
+        app:layout_constraintStart_toStartOf="@+id/editIngredients" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <CheckBox
+            android:id="@+id/ckGlutenFree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gluten Free"
+            android:textColor="@color/white" />
+
+        <CheckBox
+            android:id="@+id/ckDairyFree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dairy Free"
+            android:textColor="@color/white" />
+
+        <CheckBox
+            android:id="@+id/ckVegan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vegan"
+            android:textColor="@color/white" />
+
+        <CheckBox
+            android:id="@+id/ckVegetarian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vegetarian"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
